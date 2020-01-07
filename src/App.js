@@ -1,18 +1,18 @@
 import React from 'react';
-import { Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyle from './styles/global';
 
+import SideBar from './components/SideBar';
 import Routes from './routes';
 
 function App() {
   return (
-    <Router>
-      {/* <Header /> */}
+    <BrowserRouter>
+      <SideBar />
       <Routes />
       <GlobalStyle />
-      {/* <Footer /> */}
-    </Router>
+    </BrowserRouter>
   );
 }
 
