@@ -15,13 +15,7 @@ export default createGlobalStyle`
   }
 
   body {
-    -webkit-font-smoothing: antialiased;
-
-    display: grid;
-    grid-template-areas:
-      "header header"
-      "sidebar content"
-      "footer footer"
+    -webkit-font-smoothing: antialiased !important;
   }
 
   body, input, button {
