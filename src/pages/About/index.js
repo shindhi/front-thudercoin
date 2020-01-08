@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom'
 import '../About/stylesLink.css'
 
@@ -11,6 +12,7 @@ export default function About() {
       <Link to='/about/how-to-use'>Como usar | </Link>
       <Link to='/about/how-to-earn'>Como ganhar</Link>
     </div>
-
+    
+    <h1>Como funciona</h1>
   );
 }
