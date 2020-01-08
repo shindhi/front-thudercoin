@@ -22,7 +22,8 @@
     },
     "plugins": [
         "react",
-        "prettier"
+        "prettier",
+        "import-helpers"
     ],
     "rules": {
       "prettier/prettier": "error",
@@ -30,6 +31,19 @@
       "react/jsx-filename-extension": [
         "warn",
         { "extensions": [".jsx", ".js"] }
-      ]
+      ],
+      "import-helpers/order-imports": [
+        "warn",
+        {
+          "newlinesBetween": "always",
+          "groups": [
+            "/^react/",
+            "module",
+            "/^~/",
+            ["parent", "sibling", "index"]
+          ],
+          "alphabetize": { "order": "asc", "ignoreCase": true }
+        },
+      ],
     }
 }

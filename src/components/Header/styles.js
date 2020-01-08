@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const Top = styled.div`
   grid-area: header;
+  background: rgba(252, 170, 0, 1);
 
   div {
-    background: rgba(252, 170, 0, 1);
-    height: 5vh;
+    height: 100%;
     color: #fff;
     font-size: 20px;
     padding: 0px 20px;
