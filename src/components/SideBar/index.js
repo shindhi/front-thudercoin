@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IoIosFlash } from 'react-icons/io';
+// import { IoIosFlash } from 'react-icons/io';
 import { AiOutlinePlus, AiOutlineLineChart } from 'react-icons/ai';
 import { MdHistory, MdHelpOutline } from 'react-icons/md';
 
@@ -12,6 +12,7 @@ import {
   ConfigProfile,
   Menu,
   Item,
+  CoinThunder
 } from './styles';
 
 export default function SideBar() {
@@ -29,7 +30,7 @@ export default function SideBar() {
         <Information>
           <div>
             <span>
-              <IoIosFlash size={20} color="#FAFF00" />
+              <CoinThunder />
               500
             </span>
 
@@ -42,17 +43,17 @@ export default function SideBar() {
         </Information>
 
         <Menu>
-          <Item>
+          <Item to="/historic" >
             <MdHistory size={50} color="#fff" />
             <span>Histórico</span>
           </Item>
 
-          <Item>
+          <Item to="/about" >
             <MdHelpOutline size={50} color="#fff" />
             <span>Como funciona</span>
           </Item>
 
-          <Item>
+          <Item to="/quotation" >
             <AiOutlineLineChart size={50} color="#fff" />
             <span>Cotação</span>
           </Item>
