@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const Bar = styled.div`
   grid-area: sidebar;
+  background: rgba(254, 118, 0, 0.8);
 `;
 
 export const CoinThunder = styled(IoIosFlash)`
@@ -16,10 +17,8 @@ export const CoinThunder = styled(IoIosFlash)`
 
 
 export const Container = styled.div`
-  background: rgba(254, 118, 0, 0.8);
-  min-height: calc(100vh - 5vh);
-  width: 250px;
-  padding-top: 30px;
+  /* height: calc(100vh - 5vh); */
+  padding-top: 3rem;
 
   display: flex;
   flex-direction: column;
@@ -32,8 +31,8 @@ export const Profile = styled.div`
   align-items: center;
 
   img {
-    width: 180px;
-    height: 180px;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
   }
 
@@ -51,15 +50,16 @@ export const Information = styled.div`
 
   div {
     padding-bottom: 10px;
-
-    display: flex;
     color: #fff;
 
+    display: flex;
+
     span {
-      display: flex;
-      align-items: center;
       margin-top: 4px;
       font-weight: bold;
+
+      display: flex;
+      align-items: center;
 
       & + span {
         margin-left: 8px;
@@ -84,7 +84,7 @@ export const ConfigProfile = styled.button`
 
 export const Menu = styled.div`
   padding: 40px 0;
-  width: 250px;
+  width: 100%;
 `;
 
 export const Item = styled(Link)`
