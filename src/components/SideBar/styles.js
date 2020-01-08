@@ -22,7 +22,7 @@ export const CoinThunder = styled(IoIosFlash)`
 
 export const Container = styled.div`
   /* height: calc(100vh - 5vh); */
-  padding-top: 3rem;
+  padding-top: calc(100% - 80%);
 
   display: flex;
   flex-direction: column;
@@ -39,8 +39,8 @@ export const Profile = styled.div`
   align-items: center;
 
   img {
-    width: 10rem;
-    height: 10rem;
+    width: calc(100% - 25%);
+    height: calc(100% - 25%);
     border-radius: 50%;
   }
 
@@ -113,7 +113,7 @@ export const ConfigProfile = styled.button`
 `;
 
 export const Menu = styled.div`
-  padding: 40px 0;
+  padding: calc(100% - 90%) 0;
   width: 100%;
 
   @media screen and (max-width: 1280px) {
@@ -125,7 +125,7 @@ export const Item = styled(Link)`
   text-decoration: none;
   color: #fff;
   margin: 10px 0;
-  height: 130px;
+  height: calc(100vh - 88vh);
 
   display: flex;
   flex-direction: column;
@@ -137,7 +137,8 @@ export const Item = styled(Link)`
   }
 
   @media screen and (max-width: 1280px) {
-    height: 80px;
+    /* height: 80px; */
+    height: calc(100vh - 90vh);
   }
 `;
 

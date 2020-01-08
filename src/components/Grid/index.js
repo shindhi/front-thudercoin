@@ -11,7 +11,7 @@ export const Grid = styled.div`
     'sidebar main'
     'footer footer';
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1024px) {
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 7vh 93vh;
   }
