@@ -13,6 +13,10 @@ export const CoinThunder = styled(IoIosFlash)`
   border: 1.5px solid #FAFF00;
   border-radius: 50%;
   margin-right: 3px;
+
+  @media screen and (max-width: 1280px) {
+    font-size: 16px;
+  }
 `;
 
 
@@ -23,6 +27,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (max-width: 1280px) {
+    padding-top: 2rem;
+  }
 `;
 
 export const Profile = styled.div`
@@ -41,6 +49,18 @@ export const Profile = styled.div`
     color: #fff;
     font-size: 16px;
     font-weight: bold;
+  }
+
+  @media screen and (max-width: 1280px) {
+    img {
+      width: 8rem;
+      height: 8rem;
+    }
+
+    span {
+      margin-top: 8px;
+      font-size: 14px;
+    }
   }
 `;
 
@@ -66,6 +86,12 @@ export const Information = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 1280px) {
+    span {
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 export const ConfigProfile = styled.button`
@@ -80,18 +106,26 @@ export const ConfigProfile = styled.button`
     background: #fff;
     color: rgba(254, 118, 0, 0.8);
   }
+
+  @media screen and (max-width: 1280px) {
+    padding: 6px 12px;
+  }
 `;
 
 export const Menu = styled.div`
   padding: 40px 0;
   width: 100%;
+
+  @media screen and (max-width: 1280px) {
+    padding: 20px 0;
+  }
 `;
 
 export const Item = styled(Link)`
   text-decoration: none;
   color: #fff;
-  min-height: 130px;
   margin: 10px 0;
+  height: 130px;
 
   display: flex;
   flex-direction: column;
@@ -100,6 +134,10 @@ export const Item = styled(Link)`
 
   &:first-child {
     background: rgba(254, 118, 0, 1);
+  }
+
+  @media screen and (max-width: 1280px) {
+    height: 80px;
   }
 `;
 
