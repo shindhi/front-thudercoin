@@ -1,88 +1,143 @@
 import styled from 'styled-components';
+import { IoIosFlash } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
-export const Container = styled.div`
-  max-width: 250px;
-  background: #fe7600;
-  padding-top: 50px;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
+export const Bar = styled.div`
   grid-area: sidebar;
+  background: rgba(254, 118, 0, 0.8);
+`;
 
-  img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+export const CoinThunder = styled(IoIosFlash)`
+  font-size: 20px;
+  color: #FAFF00;
+  border: 1.5px solid #FAFF00;
+  border-radius: 50%;
+  margin-right: 3px;
+
+  @media screen and (max-width: 1280px) {
+    font-size: 16px;
   }
 `;
 
-export const Informacoes = styled.div`
-  padding-top: 15px;
+
+export const Container = styled.div`
+  /* height: calc(100vh - 5vh); */
+  padding-top: 3rem;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
-  strong {
-    color: #fff;
-    font-size: 15px;
+  @media screen and (max-width: 1280px) {
+    padding-top: 2rem;
+  }
+`;
+
+export const Profile = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
   }
 
-  button {
-    border: 1.4px solid #fff;
-    width: 120px;
-    border-radius: 40px;
-    padding: 5px 15px;
+  span {
+    margin-top: 15px;
     color: #fff;
-    background: none;
-    transition: background 0.2s;
+    font-size: 16px;
+    font-weight: bold;
+  }
 
-    &:hover {
-      background: #fff;
-      color: #fe7600;
+  @media screen and (max-width: 1280px) {
+    img {
+      width: 8rem;
+      height: 8rem;
+    }
+
+    span {
+      margin-top: 8px;
+      font-size: 14px;
     }
   }
+`;
+
+export const Information = styled.div`
+  display: flex;
+  flex-direction: column;
 
   div {
-    padding: 5px 0;
+    padding-bottom: 10px;
+    color: #fff;
 
     display: flex;
 
     span {
-      color: #fff;
+      margin-top: 4px;
+      font-weight: bold;
 
       display: flex;
-      justify-content: center;
       align-items: center;
 
-      strong {
-        margin-right: 4px;
+      & + span {
+        margin-left: 8px;
       }
     }
+  }
 
-    span + span {
-      margin-left: 5px;
+  @media screen and (max-width: 1280px) {
+    span {
+      font-size: 0.8rem;
     }
   }
 `;
 
-export const Opcoes = styled.ul`
-  list-style: none;
+export const ConfigProfile = styled.button`
+  background: none;
+  border: 1.5px solid #fff;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 50px;
+  transition: background 0.2s;
 
-  li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  &:hover {
+    background: #fff;
+    color: rgba(254, 118, 0, 0.8);
+  }
 
-    img {
-      width: 60px;
-      height: 60px;
-    }
+  @media screen and (max-width: 1280px) {
+    padding: 6px 12px;
   }
 `;
+
+export const Menu = styled.div`
+  padding: 40px 0;
+  width: 100%;
+
+  @media screen and (max-width: 1280px) {
+    padding: 20px 0;
+  }
+`;
+
+export const Item = styled(Link)`
+  text-decoration: none;
+  color: #fff;
+  margin: 10px 0;
+  height: 130px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &:first-child {
+    background: rgba(254, 118, 0, 1);
+  }
+
+  @media screen and (max-width: 1280px) {
+    height: 80px;
+  }
+`;
+

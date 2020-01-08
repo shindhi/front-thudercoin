@@ -1,56 +1,65 @@
 import React from 'react';
 
+import { AiOutlinePlus, AiOutlineLineChart } from 'react-icons/ai';
+import { MdHistory, MdHelpOutline } from 'react-icons/md';
+
 import {
-  IoIosFlash,
-  IoIosHelpCircleOutline,
-  IoMdTrendingUp,
-  GiChart
-} from 'react-icons/io';
-import { FaHistory } from 'react-icons/fa';
+  Bar,
+  Container,
+  Information,
+  Profile,
+  ConfigProfile,
+  Menu,
+  Item,
+  CoinThunder
+} from './styles';
 
-import { Container, Opcoes, Informacoes } from './styles';
-
-import coin from '../../assets/img/coin_icon.svg';
+import Mititititier from '../../assets/img/retarda.png';
 
 export default function SideBar() {
   return (
-    <Container>
-      <img
-        src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-        alt="Avatar"
-      />
-      <Informacoes>
-        <strong>Nome Completo</strong>
-        <div>
-          <span>
-            {/* <img src={coin} alt="coin" /> */}
-            <IoIosFlash size={18} color="#FAFF00" />
-            500
-          </span>
-          <span>
-            <strong>+</strong>
-            0,25%
-          </span>
-        </div>
-        <button type="button">Perfil</button>
-      </Informacoes>
+    <Bar>
+      <Container>
+        <Profile>
+          <img
+            src={Mititititier}
+            alt="Avatar"
+          />
+          <span>Mititititititititititier</span>
+        </Profile>
 
-      <Opcoes>
-        <li>
-          <FaHistory size={60} />
-          <span>Histórico</span>
-        </li>
-        <li>
-          <IoIosHelpCircleOutline size={60} />
-          <span>Como Funciona</span>
-        </li>
-        <li>
-          {/* <IoMdTrendingUp size={60} /> */}
+        <Information>
+          <div>
+            <span>
+              <CoinThunder />
+              500
+            </span>
 
-          <GiChart size={60} />
-          <span>Cotação</span>
-        </li>
-      </Opcoes>
-    </Container>
+            <span>
+              <AiOutlinePlus size={18} color="#fff" />
+              0,25%
+            </span>
+          </div>
+          <ConfigProfile>Perfil</ConfigProfile>
+        </Information>
+
+        <Menu>
+          <Item to="/historic" >
+            <MdHistory size={50} color="#fff" />
+            <span>Histórico</span>
+          </Item>
+
+          <Item to="/about" >
+            <MdHelpOutline size={50} color="#fff" />
+            <span>Como funciona</span>
+          </Item>
+
+          <Item to="/quotation" >
+            <AiOutlineLineChart size={50} color="#fff" />
+            <span>Cotação</span>
+          </Item>
+        </Menu>
+      </Container>
+    </Bar>
   );
 }
