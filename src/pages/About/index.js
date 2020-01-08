@@ -2,8 +2,8 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-export default function Home() {
+export default function About() {
   return (
-    null
+    <h1>Como funciona</h1>
   );
 }
