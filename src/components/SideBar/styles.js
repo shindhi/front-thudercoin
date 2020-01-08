@@ -86,6 +86,42 @@ export const Information = styled.div`
       }
     }
   }
+`;
+
+export const ConfigProfile = styled.button`
+  background: none;
+  border: 1.5px solid #fff;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 50px;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #fff;
+    color: rgba(254, 118, 0, 0.8);
+  }
+`;
+
+export const Menu = styled.div`
+  padding: 40px 0;
+  width: 100%;
+`;
+
+export const Item = styled(Link)`
+  text-decoration: none;
+  color: #fff;
+  min-height: 130px;
+  margin: 10px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &:first-child {
+    background: rgba(254, 118, 0, 1);
+  }
+`;
 
   @media screen and (max-width: 1280px) {
     span {
@@ -140,4 +176,3 @@ export const Item = styled(Link)`
     height: 80px;
   }
 `;
-
