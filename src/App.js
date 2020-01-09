@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
+// Static components
 import { Grid } from './components/Grid';
 import Header from './components/Header';
 import SideBar from './components/SideBar';
@@ -10,14 +11,12 @@ import GlobalStyle from './styles/global';
 function App() {
   return (
     <BrowserRouter>
-      <GlobalStyle />
-
       <Grid>
         <Header />
         <SideBar />
         <Routes />
-        <GlobalStyle />
       </Grid>
+      <GlobalStyle />
     </BrowserRouter>
   );
 }

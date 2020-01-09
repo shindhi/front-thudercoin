@@ -6,10 +6,14 @@ import './stylesLink.css';
 
 export default function About() {
   return (
-    <div className="links">
-      <Link>Como funciona | </Link>
-      <Link to="/about/how-to-use">Como usar | </Link>
-      <Link to="/about/how-to-earn">Como ganhar</Link>
-    </div>
+    <>
+      <div className="links">
+        <Link to="/">Como funciona | </Link>
+        <Link to="/about/how-to-use">Como usar | </Link>
+        <Link to="/about/how-to-earn">Como ganhar</Link>
+      </div>
+
+      <h1>Como funciona</h1>
+    </>
   );
 }
