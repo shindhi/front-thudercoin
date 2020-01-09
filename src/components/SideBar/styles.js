@@ -1,6 +1,7 @@
-import styled from 'styled-components';
 import { IoIosFlash } from 'react-icons/io';
 import { Link } from 'react-router-dom';
+
+import styled from 'styled-components';
 
 export const Bar = styled.div`
   grid-area: sidebar;
@@ -9,8 +10,8 @@ export const Bar = styled.div`
 
 export const CoinThunder = styled(IoIosFlash)`
   font-size: 20px;
-  color: #FAFF00;
-  border: 1.5px solid #FAFF00;
+  color: #faff00;
+  border: 1.5px solid #faff00;
   border-radius: 50%;
   margin-right: 3px;
 
@@ -19,10 +20,9 @@ export const CoinThunder = styled(IoIosFlash)`
   }
 `;
 
-
 export const Container = styled.div`
   /* height: calc(100vh - 5vh); */
-  padding-top: 3rem;
+  padding-top: calc(100% - 80%);
 
   display: flex;
   flex-direction: column;
@@ -39,8 +39,8 @@ export const Profile = styled.div`
   align-items: center;
 
   img {
-    width: 10rem;
-    height: 10rem;
+    width: calc(100% - 25%);
+    height: calc(100% - 25%);
     border-radius: 50%;
   }
 
@@ -86,42 +86,6 @@ export const Information = styled.div`
       }
     }
   }
-`;
-
-export const ConfigProfile = styled.button`
-  background: none;
-  border: 1.5px solid #fff;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 50px;
-  transition: background 0.2s;
-
-  &:hover {
-    background: #fff;
-    color: rgba(254, 118, 0, 0.8);
-  }
-`;
-
-export const Menu = styled.div`
-  padding: 40px 0;
-  width: 100%;
-`;
-
-export const Item = styled(Link)`
-  text-decoration: none;
-  color: #fff;
-  min-height: 130px;
-  margin: 10px 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  &:first-child {
-    background: rgba(254, 118, 0, 1);
-  }
-`;
 
   @media screen and (max-width: 1280px) {
     span {
@@ -149,7 +113,7 @@ export const ConfigProfile = styled.button`
 `;
 
 export const Menu = styled.div`
-  padding: 40px 0;
+  padding: calc(100% - 90%) 0;
   width: 100%;
 
   @media screen and (max-width: 1280px) {
@@ -161,7 +125,7 @@ export const Item = styled(Link)`
   text-decoration: none;
   color: #fff;
   margin: 10px 0;
-  height: 130px;
+  height: calc(100vh - 88vh);
 
   display: flex;
   flex-direction: column;
@@ -173,6 +137,7 @@ export const Item = styled(Link)`
   }
 
   @media screen and (max-width: 1280px) {
-    height: 80px;
+    /* height: 80px; */
+    height: calc(100vh - 90vh);
   }
 `;
