@@ -6,6 +6,7 @@ import Header from './components/Header';
 
 // Static components
 import SideBar from './components/SideBar';
+
 import Routes from './routes';
 import GlobalStyle from './styles/global';
 
