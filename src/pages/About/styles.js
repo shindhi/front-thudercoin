@@ -6,4 +6,4 @@ export const Links = styled.div`
     top: 10%;
     font-size: 25px;
     left: 45%;
-`
+`;
