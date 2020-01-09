@@ -12,6 +12,7 @@ import GlobalStyle from './styles/global';
 function App() {
   return (
     <BrowserRouter>
+      <GlobalStyle />
       <Grid>
         <Header />
         <SideBar />
