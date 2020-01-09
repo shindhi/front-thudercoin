@@ -43,7 +43,8 @@
             ["parent", "sibling", "index"]
           ],
           "alphabetize": { "order": "asc", "ignoreCase": true }
-        },
+        }
       ],
+      "react/state-in-constructor": "off"
     }
 }
