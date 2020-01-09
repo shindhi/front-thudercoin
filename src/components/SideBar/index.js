@@ -27,16 +27,6 @@ export default function SideBar() {
     }
   }, []);
 
-  // state = {
-  //   selectedItem: null,
-  // }
-
-  // handleXpto = (e) => {
-  //   this.setState({selectedItem: e.target.name})
-  // }
-
-  // <div classNames="ad" name="historico" onClick={handleXpto} isActive={selectedItem === 'historico'}></div>
-
   return (
     <Bar>
       <Container>
