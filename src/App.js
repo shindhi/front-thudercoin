@@ -3,11 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyle from './styles/global';
 
-
-import Header from './components/Header';
-import SideBar from './components/SideBar';
-
-
+// Static components
 import Header from './components/Header';
 import SideBar from './components/SideBar';
 
@@ -18,15 +14,12 @@ import { Grid } from './components/Grid';
 function App() {
   return (
     <BrowserRouter>
-
-      <GlobalStyle />
-
       <Grid>
         <Header />
         <SideBar />
         <Routes />
-        <GlobalStyle />
       </Grid>
+      <GlobalStyle />
     </BrowserRouter>
   );
 }
