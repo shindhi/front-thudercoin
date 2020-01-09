@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+
 import { Restaurant, Book, Category, Round, Taxi } from './styles';
 
 class WhereToUse extends Component {
