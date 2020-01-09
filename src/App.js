@@ -1,28 +1,24 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import GlobalStyle from './styles/global';
-
-
+import { Grid } from './components/Grid';
 import Header from './components/Header';
+
+// Static components
 import SideBar from './components/SideBar';
 
 import Routes from './routes';
-
-import { Grid } from './components/Grid';
+import GlobalStyle from './styles/global';
 
 function App() {
   return (
     <BrowserRouter>
-
-      <GlobalStyle />
-
       <Grid>
         <Header />
         <SideBar />
         <Routes />
-        <GlobalStyle />
       </Grid>
+      <GlobalStyle />
     </BrowserRouter>
   );
 }
