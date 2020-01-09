@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import { IoIosFlash } from 'react-icons/io';
+
 import { AiOutlinePlus, AiOutlineLineChart } from 'react-icons/ai';
 import { MdHistory, MdHelpOutline } from 'react-icons/md';
 
@@ -15,16 +15,18 @@ import {
   CoinThunder
 } from './styles';
 
+import Mititititier from '../../assets/img/retarda.png';
+
 export default function SideBar() {
   return (
     <Bar>
       <Container>
         <Profile>
           <img
-            src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+            src={Mititititier}
             alt="Avatar"
           />
-          <span>Nome Completo</span>
+          <span>Mititititititititititier</span>
         </Profile>
 
         <Information>
@@ -35,7 +37,7 @@ export default function SideBar() {
             </span>
 
             <span>
-              <AiOutlinePlus size={20} color="#fff" />
+              <AiOutlinePlus size={18} color="#fff" />
               0,25%
             </span>
           </div>

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import DataTable from 'react-data-table-component';
 import axios from '../../utils/httpClient'
 
-import { Container } from './styles';
+import { Container, Table } from './styles';
 
 class History extends Component {
   state = {
@@ -23,49 +22,29 @@ class History extends Component {
 
   }
 
-  columns = [
-    {
-      name: 'Tipo',
-      selector: 'transactionType',
-      sortable: true,
-      grow: 2
-    },
-    {
-      name: 'Usuário',
-      selector: 'userAccount',
-      sortable: true,
-      grow: 2
-    },
-    {
-      name: 'Origem',
-      selector: 'origin',
-      sortable: true,
-      grow: 2
-    },
-    {
-      name: 'ThunderCoins',
-      selector: 'value',
-      sortable: true,
-      grow: 2
-    },
-    {
-      name: 'Data / Hora',
-      selector: 'dateTransaction',
-      sortable: true,
-      grow: 2
-    }
-  ]
-
   render(){
     return(
       <Container>
-        <DataTable
-          title="Transactions"
-          columns={this.columns}
-          data={this.state.transactions}
-          theme="solarized"
-          pagination
-        />
+        <Table type={this.state.transactions.transactionType}>
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Usuário</th>
+              <th>Origem</th>
+              <th>ThunderCoins</th>
+              <th>Data / Hora</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.transactions.map(transaction => <tr>
+              <td>{transaction.transactionType === "INPUT" ? "Entrada" : "Saída"}</td>
+              <td>{transaction.userAccount}</td>
+              <td>{transaction.origin}</td>
+              <td id="teste">{transaction.transactionType === "INPUT" ? "+ " : "- "}{transaction.value}</td>
+              <td>{transaction.dateTransaction}</td>
+            </tr>)}
+          </tbody>
+        </Table>
       </Container>
     );
   }
