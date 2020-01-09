@@ -2,11 +2,11 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import About from './pages/About';
-import WhereToUse from './pages/About/whereToUse/index';
 import Historic from './pages/Historic';
 import HowToEarn from './pages/HowToEarn';
 import HowToUse from './pages/HowToUse/index';
 import Quotation from './pages/Quotation';
+import WhereToUse from './pages/whereToUse';
 
 export default function Routes() {
   return (
