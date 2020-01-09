@@ -132,9 +132,8 @@ export const Item = styled(Link)`
   align-items: center;
   justify-content: center;
 
-  &:first-child {
-    background: rgba(254, 118, 0, 1);
-  }
+  background: ${props =>
+    props.active ? 'rgba(254, 118, 0, 1)' : 'rgba(255, 142, 76, 1)'};
 
   @media screen and (max-width: 1280px) {
     /* height: 80px; */

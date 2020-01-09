@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import axios from '../../utils/httpClient'
+import { TiArrowDown, TiArrowUp } from 'react-icons/ti';
 
-import { Container, Table } from './styles';
+import axios from '../../utils/httpClient';
+import { Container, Table, Negative, Positive } from './styles';
 
 class History extends Component {
   state = {
-    transactions: []
+    transactions: [],
   };
 
   componentDidMount() {
@@ -13,19 +14,21 @@ class History extends Component {
   }
 
   retrieveTransactions() {
-    axios.get("/transactions")
-      .then(({ data }) =>
-        this.setState({
-          transactions: data
-        })
-      )
-
+    axios.get('/transactions').then(({ data }) =>
+      this.setState({
+        transactions: data,
+      })
+    );
   }
 
-  render(){
-    return(
+  render() {
+    const { transactions } = this.state;
+
+    return (
       <Container>
-        <Table type={this.state.transactions.transactionType}>
+        <h1>Histórico Geral de Transações</h1>
+        <br />
+        <Table type={transactions.transactionType}>
           <thead>
             <tr>
               <th>Tipo</th>
@@ -36,13 +39,39 @@ class History extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.transactions.map(transaction => <tr>
-              <td>{transaction.transactionType === "INPUT" ? "Entrada" : "Saída"}</td>
-              <td>{transaction.userAccount}</td>
-              <td>{transaction.origin}</td>
-              <td id="teste">{transaction.transactionType === "INPUT" ? "+ " : "- "}{transaction.value}</td>
-              <td>{transaction.dateTransaction}</td>
-            </tr>)}
+            {transactions.map(transaction => (
+              <tr>
+                <td>
+                  {transaction.transactionType === 'INPUT' ? (
+                    <Positive>
+                      <TiArrowUp color="green" />
+                      <span>Entrada</span>
+                    </Positive>
+                  ) : (
+                    <Negative>
+                      <TiArrowDown color="red" />
+                      <span>Saída</span>
+                    </Negative>
+                  )}
+                </td>
+                <td>{transaction.userAccount}</td>
+                <td>{transaction.origin}</td>
+                <td>
+                  {transaction.transactionType === 'INPUT' ? (
+                    <Positive>
+                      <TiArrowUp color="green" />
+                      <span>{transaction.value}</span>
+                    </Positive>
+                  ) : (
+                    <Negative>
+                      <TiArrowDown color="red" />
+                      <span>{transaction.value}</span>
+                    </Negative>
+                  )}{' '}
+                </td>
+                <td>{transaction.dateTransaction}</td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </Container>
