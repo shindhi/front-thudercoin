@@ -1,31 +1,28 @@
 import React from "react";
-import '../HowToEarn/styleCards.css'
 import About from "../About";
+import { Container, UseCard, Title, Bar, EmptyBar, Content } from "../HowToEarn/styles"
 
 function HowToUse() {
 
-
     return (
-        <div>
+        <>
             <About />
-            <div className="container">
-                <div className="card">
-                    <h3 className="title">Como usar</h3>
-                    <div className="bar">
-                        <div className="emptybar"></div>
-                        <div className="filledbar"></div>
-                    </div>
-                    <div className="content">
-                        <p>
-                            Escolha um dos estabelicementos parceiros do ThunderCoin, disponíveis
-                            na aba Onde Usar, guarde seu cupom fiscal e solicite o reembolso a partir
-                            da plataforma ThunderCoin!
-
-                    </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <Container>
+                <UseCard>
+                    <Title>
+                        Como usar
+                    </Title>
+                    <Bar>
+                        <EmptyBar></EmptyBar>
+                    </Bar>
+                    <Content>
+                        Escolha um dos estabelicementos parceiros do ThunderCoin, disponíveis
+                        na aba Onde Usar, guarde seu cupom fiscal e solicite o reembolso a partir
+                        da plataforma ThunderCoin!
+                    </Content>
+                </UseCard>
+            </Container>
+        </>
     )
 }
 export default HowToUse;
