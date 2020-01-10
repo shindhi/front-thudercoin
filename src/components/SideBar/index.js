@@ -50,7 +50,7 @@ export default function SideBar() {
             <span>Histórico</span>
           </Item>
 
-          <Item to="/about" >
+          <Item to="/about/how-to-use" >
             <MdHelpOutline size={50} color="#fff" />
             <span>Como funciona</span>
           </Item>

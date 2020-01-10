@@ -1,13 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Links } from './styles';
-
-// import { Container } from './styles';
+import { Menu, Item, CardExibition } from './styles';
 
 export default function About() {
   return (
     <>
-      <h1>Oi</h1>
+      <Menu>
+
+        <Item to="/about/how-to-use">
+          <CardExibition>Como usar</CardExibition>
+        </Item>
+        <Item to="/about/how-to-earn">
+          <CardExibition> Como ganhar </CardExibition>
+        </Item>
+        <Item to="/about/where-to-use">
+          <CardExibition>Onde usar</CardExibition>
+        </Item>
+
+      </Menu>
     </>
   );
 }
