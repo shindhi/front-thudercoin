@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { CareStore } from '../../assets/img';
 import axios from '../../utils/httpClient';
+import About from '../About/index';
 import {
   Restaurant,
   Book,
@@ -11,6 +12,7 @@ import {
   Img,
   Info,
   ItemList,
+  Ul,
 } from './styles';
 
 class WhereToUse extends Component {
@@ -30,7 +32,9 @@ class WhereToUse extends Component {
     const { origins } = this.state;
 
     return (
-      <div>
+      <>
+        <About />
+
         <Category>
           <Round onClick={() => this.handleClick('restaurante')}>
             <Restaurant />
@@ -49,7 +53,7 @@ class WhereToUse extends Component {
             />
           </Round>
         </Category>
-        <ul>
+        <Ul>
           {origins.map(origin => (
             <ItemList>
               <Img
@@ -62,8 +66,8 @@ class WhereToUse extends Component {
               </Info>
             </ItemList>
           ))}
-        </ul>
-      </div>
+        </Ul>
+      </>
     );
   }
 }

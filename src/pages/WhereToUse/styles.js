@@ -30,10 +30,15 @@ export const CareStoreLogo = styled.svg`
 `;
 
 export const Category = styled.div`
-  height: 100px;
+  height: 105px;
   display: flex;
   justify-content: space-evenly;
   margin: 25px;
+  position: absolute;
+  margin: 0 auto;
+  left: 12.5%;
+  top: 24%;
+  width: 87.5%;
 `;
 
 // export const XPTO = styled(Category)``;
@@ -53,12 +58,14 @@ export const Round = styled.button`
 `;
 
 export const ItemList = styled.li`
-  display: flex;
   align-items: center;
+  display: flex;
   margin: 30px;
   border: 2px solid #fa8929;
   border-radius: 15px;
   padding: 10px;
+  width: 50%;
+  justify-content: space-evenly;
 `;
 
 export const Img = styled.img`
@@ -72,6 +79,12 @@ export const Info = styled.div`
 `;
 
 export const Ul = styled.ul`
-  // margin: 50px;
-  display: inline-block;
+  position: absolute;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  left: 12.5%;
+  top: 38%;
+  width: 87.5%;
+  align-items: center;
 `;
