@@ -85,5 +85,4 @@ export const EmptyBar = styled.div`
     background-color: #fff;
     width: 80%;
     height: 100%;
-     }
 `
