@@ -61,7 +61,7 @@ export default function SideBar() {
           </Item>
 
           <Item
-            to="/about"
+            to="/about/how-to-use"
             active={item === 'about' && true}
             onClick={() => setItem('about')}
           >
