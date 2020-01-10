@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { RestaurantPhoto, CareStore } from '../../assets/img';
+import { CareStore } from '../../assets/img';
 import axios from '../../utils/httpClient';
 import {
   Restaurant,
@@ -27,6 +27,8 @@ class WhereToUse extends Component {
   };
 
   render() {
+    const { origins } = this.state;
+
     return (
       <div>
         <Category>
@@ -47,11 +49,13 @@ class WhereToUse extends Component {
             />
           </Round>
         </Category>
-
         <ul>
-          {this.state.origins.map(origin => (
+          {origins.map(origin => (
             <ItemList>
-              <Img src={RestaurantPhoto} alt="Foto do restaurante" />
+              <Img
+                src={require(`../../assets/img/${origin.imagePath}`)}
+                alt={origin.name}
+              />
               <Info>
                 <h2>{origin.name}</h2>
                 <h3>{origin.address}</h3>
