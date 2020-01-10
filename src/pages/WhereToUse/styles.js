@@ -68,6 +68,7 @@ export const Img = styled.img`
   height: 170px;
   border-radius: 10px;
 `;
+
 export const Info = styled.div`
   margin: 0 0 0 20px;
 `;
