@@ -1,19 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './stylesLink.css';
-
-// import { Container } from './styles';
+import { Menu, Item, CardExibition } from './styles';
 
 export default function About() {
   return (
     <>
-      <div className="links">
-        <Link to="/about/where-to-use">Onde usar| </Link>
-        <Link to="/about/how-to-use">Como usar | </Link>
-        <Link to="/about/how-to-earn">Como ganhar</Link>
-      </div>
+      <Menu>
 
-      <h1>Como funciona</h1>
+        <Item to="/about/how-to-use">
+          <CardExibition>Como usar</CardExibition>
+        </Item>
+        <Item to="/about/how-to-earn">
+          <CardExibition> Como ganhar </CardExibition>
+        </Item>
+        <Item to="/about/where-to-use">
+          <CardExibition>Onde usar</CardExibition>
+        </Item>
+
+      </Menu>
     </>
   );
 }
