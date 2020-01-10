@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { IoMdPower } from 'react-icons/io';
 
 import { Top } from './styles';
