@@ -30,7 +30,7 @@ class WhereToUse extends Component {
     const { origins } = this.state;
 
     return (
-      <>
+      <div>
         <Category>
           <Round onClick={() => this.handleClick('restaurante')}>
             <Restaurant />
@@ -49,12 +49,11 @@ class WhereToUse extends Component {
             />
           </Round>
         </Category>
-
         <ul>
           {origins.map(origin => (
             <ItemList>
               <Img
-                src={`../../assets/img/${origin.imagePath}`}
+                src={require(`../../assets/img/${origin.imagePath}`)}
                 alt={origin.name}
               />
               <Info>
@@ -64,7 +63,7 @@ class WhereToUse extends Component {
             </ItemList>
           ))}
         </ul>
-      </>
+      </div>
     );
   }
 }

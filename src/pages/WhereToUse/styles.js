@@ -27,7 +27,6 @@ export const Taxi = styled(FaTaxi)`
 export const CareStoreLogo = styled.svg`
   width: 70px;
   height: 70px;
-  // background: black;
 `;
 
 export const Category = styled.div`
@@ -44,7 +43,6 @@ export const Round = styled.button`
   background: #fa8929;
   width: 100px;
   height: 100px;
-  //margin: 50px 45px;
   border-radius: 50%;
   color: white;
   display: inline-block;
@@ -71,4 +69,9 @@ export const Img = styled.img`
 
 export const Info = styled.div`
   margin: 0 0 0 20px;
+`;
+
+export const Ul = styled.ul`
+  // margin: 50px;
+  display: inline-block;
 `;
