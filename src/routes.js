@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+
 import About from './pages/About';
 import Historic from './pages/Historic';
 import HowToEarn from './pages/HowToEarn';

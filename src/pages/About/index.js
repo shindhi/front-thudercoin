@@ -1,11 +1,11 @@
 import React from 'react';
+
 import { Menu, Item, CardExibition } from './styles';
 
 export default function About() {
   return (
     <>
       <Menu>
-
         <Item to="/about/how-to-use">
           <CardExibition>Como usar</CardExibition>
         </Item>
@@ -15,7 +15,6 @@ export default function About() {
         <Item to="/about/where-to-use">
           <CardExibition>Onde usar</CardExibition>
         </Item>
-
       </Menu>
     </>
   );

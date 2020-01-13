@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Chart from 'react-google-charts';
 
+import axios from '../../utils/httpClient';
 import {
   Container,
   QuotationTitle,
@@ -9,28 +10,19 @@ import {
 } from './styles';
 
 export default function Quotation() {
-  const [rows, setRows] = useState([]);
-  const [initialDate, setInitialDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const [date, setDates] = useState([]);
 
-  useEffect(() => {
-    fetch('https://thundercoin-api.herokuapp.com/quotations')
-      .then(res => res.json())
-      .then(res => {
-        const data = res.map(r => {
-          return { date: r.createdAt.split(' ')[0], value: r.value };
-        });
-        setRows(data);
-        setInitialDate(data[0].date);
-        // console.log('initial date', initialDate, 'must be null');
-        // console.log('final date', endDate, 'must be null');
-        setEndDate(data[4].date);
-      });
+  useEffect(async () => {
+    const { data } = await axios.get('/quotations');
+    const arrDate = [['Date', 'Value']];
+
+    data.map(e => arrDate.push([new Date(e.createdAt), e.value]));
+
+    setDates(arrDate);
   }, []);
 
-  // console.log('rows', rows);
-  // console.log(rows);
-  // console.log(endDate);
+  console.log(date);
+
   return (
     <Container>
       <QuotationTitle>
@@ -46,24 +38,14 @@ export default function Quotation() {
         chartType="AreaChart"
         loader={<div>Loading Chart</div>}
         data={[
-          ['Date', 'Value'],
-          [new Date(1997, 1, 1), 2000 * Math.random()],
-          [new Date(1998, 1, 1), 2000 * Math.random()],
-          [new Date(1999, 1, 1), 2000 * Math.random()],
-          [new Date(2000, 1, 1), 2000 * Math.random()],
-          [new Date(2001, 1, 1), 2000 * Math.random()],
-          [new Date(2002, 1, 1), 2000 * Math.random()],
-          [new Date(2003, 1, 1), 2000 * Math.random()],
-          [new Date(2004, 1, 1), 2000 * Math.random()],
-          [new Date(2005, 1, 1), 2000 * Math.random()],
-          [new Date(2006, 1, 1), 2000 * Math.random()],
-          [new Date(2007, 1, 1), 2000 * Math.random()],
-          [new Date(2008, 1, 1), 2000 * Math.random()],
-          [new Date(2009, 1, 1), 2000 * Math.random()],
+          date.forEach(e => {
+            console.log(e);
+            return e;
+          }),
         ]}
         // data={[
         //   ['Date', 'Value'],
-        //   [rows[4].date, rows[4].value
+        //   [new Date(1997, 1, 1), 2000 * Math.random()],
         //   [new Date(1998, 1, 1), 2000 * Math.random()],
         //   [new Date(1999, 1, 1), 2000 * Math.random()],
         //   [new Date(2000, 1, 1), 2000 * Math.random()],
@@ -90,34 +72,34 @@ export default function Quotation() {
         }}
         rootProps={{ 'data-testid': '3' }}
         chartPackages={['corechart', 'controls']}
-        controls={[
-          {
-            legendTextStyle: { color: '#FFF' },
-            titleTextStyle: { color: '#FFF' },
-            controlType: 'ChartRangeFilter',
-            options: {
-              filterColumnIndex: 0,
-              ui: {
-                chartType: 'LineChart',
-                chartOptions: {
-                  colors: ['red'],
-                  backgroundColor: 'rgb(255,255,0)',
-                  chartArea: { width: '70%', height: '60%' },
-                  hAxis: { baselineColor: 'none' },
-                },
-              },
-            },
-            controlPosition: 'top',
-            controlWrapperParams: {
-              state: {
-                range: {
-                  start: new Date(2009, 1, 1),
-                  end: new Date(2009, 1, 1),
-                },
-              },
-            },
-          },
-        ]}
+        // controls={[
+        //   {
+        //     legendTextStyle: { color: '#FFF' },
+        //     titleTextStyle: { color: '#FFF' },
+        //     controlType: 'ChartRangeFilter',
+        //     options: {
+        //       filterColumnIndex: 0,
+        //       ui: {
+        //         chartType: 'LineChart',
+        //         chartOptions: {
+        //           colors: ['red'],
+        //           backgroundColor: 'rgb(255,255,0)',
+        //           chartArea: { width: '70%', height: '60%' },
+        //           hAxis: { baselineColor: 'none' },
+        //         },
+        //       },
+        //     },
+        //     controlPosition: 'top',
+        //     controlWrapperParams: {
+        //       state: {
+        //         range: {
+        //           start: new Date(2009, 1, 1),
+        //           end: new Date(2009, 1, 1),
+        //         },
+        //       },
+        //     },
+        //   },
+        // ]}
       />
 
       <QuotationDesc>
