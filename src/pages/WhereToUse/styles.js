@@ -73,6 +73,7 @@ export const Round = styled.button`
   color: white;
   display: inline-block;
   &:hover {
+    transition: all 0.2s ease-in-out;
     background-color: #fe7600;
     cursor: pointer;
   }
@@ -101,6 +102,9 @@ export const Img = styled.img`
 
 export const Info = styled.div`
   margin: 0 0 0 20px;
+  &>h3{
+    font-weight: normal !important;
+  }
 `;
 
 export const Ul = styled.ul`

@@ -13,7 +13,7 @@ import {
   Info,
   ItemList,
   Ul,
-  Container
+  Container,
 } from './styles';
 
 class WhereToUse extends Component {
