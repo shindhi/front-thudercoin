@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+
 import About from './pages/About';
 import Historic from './pages/Historic';
 import HowToEarn from './pages/HowToEarn';
@@ -12,7 +13,7 @@ export default function Routes() {
     <Switch>
       <Route path={['/', '/historic']} exact component={Historic} />
 
-      <Route path="/about" component={About} />
+      <Route path="/about" exact component={About} />
 
       <Route path="/about/how-to-earn" component={HowToEarn} />
       <Route path="/about/how-to-use" component={HowToUse} />

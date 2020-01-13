@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding-top: 0rem;
-  background: #fff;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: rgb(254, 200, 0);
 `;
 
 export const QuotationTitle = styled.div`
@@ -16,9 +16,11 @@ export const QuotationTitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background: rgba(100, 0, 150, 1); */
+  background: rgba(100, 0, 150, 1);
   color: #fff;
-  color: #000;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-family: 'Arial';
 `;
 
 export const QuotationDesc = styled.div`
