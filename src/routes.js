@@ -12,7 +12,7 @@ export default function Routes() {
     <Switch>
       <Route path={['/', '/historic']} exact component={Historic} />
 
-      <Route path="/about" component={About} />
+      <Route path="/about" exact component={About} />
 
       <Route path="/about/how-to-earn" component={HowToEarn} />
       <Route path="/about/how-to-use" component={HowToUse} />
