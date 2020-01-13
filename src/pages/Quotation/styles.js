@@ -38,7 +38,7 @@ export const QuotationFilterBox = styled.div`
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
-  color: #000;
+  color: #fff;
   font-size: 8px;
 `;
 
