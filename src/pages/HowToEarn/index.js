@@ -1,13 +1,14 @@
 import React from 'react';
 
 import About from '../About';
-import { Container, Card, Title, Bar, EmptyBar, Content } from './styles';
+import { Container, CardContainer, Card, Title, Bar, EmptyBar, Content } from './styles';
 
 function HowToEarn() {
   return (
     <>
-      <About />
       <Container>
+        <About />
+        <CardContainer>
         <Card>
           <Title>Lecionando</Title>
           <Bar>
@@ -39,6 +40,7 @@ function HowToEarn() {
             isso...
           </Content>
         </Card>
+        </CardContainer>
       </Container>
     </>
   );

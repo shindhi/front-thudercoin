@@ -4,48 +4,69 @@ import { MdRestaurant } from 'react-icons/md';
 
 import styled from 'styled-components';
 
-import { CareStore } from '../../assets/img';
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const Restaurant = styled(MdRestaurant)`
   width: 70px;
   height: 70px;
   margin: 15px;
+  @media (max-width: 770px) {
+    margin: 12px;
+    width: 56px;
+    height: 56px;
+  }
 `;
 
 export const Book = styled(GiOpenBook)`
   width: 70px;
   height: 70px;
   margin: 15px;
+  @media (max-width: 770px) {
+    margin: 12px;
+    width: 56px;
+    height: 56px;
+  }
 `;
 
 export const Taxi = styled(FaTaxi)`
   width: 70px;
   height: 70px;
   margin: 15px;
+  @media (max-width: 770px) {
+    margin: 12px;
+    width: 56px;
+    height: 56px;
+  }
 `;
 
 export const CareStoreLogo = styled.svg`
   width: 70px;
   height: 70px;
+  @media (max-width: 770px) {
+    margin: 12px;
+    width: 56px;
+    height: 56px;
+  }
 `;
 
 export const Category = styled.div`
   height: 105px;
   display: flex;
   justify-content: space-evenly;
-  margin: 25px;
-  position: absolute;
   margin: 0 auto;
   left: 12.5%;
   top: 24%;
-  width: 87.5%;
+  width: 100%;
+  align-items: center;
 `;
-
-// export const XPTO = styled(Category)``;
 
 export const Round = styled.button`
   border: none;
   background: #fa8929;
+  margin: 30px;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -54,6 +75,11 @@ export const Round = styled.button`
   &:hover {
     background-color: #fe7600;
     cursor: pointer;
+  }
+  @media (max-width: 770px) {
+    margin: 15px;
+    width: 80px;
+    height: 80px;
   }
 `;
 
@@ -64,12 +90,11 @@ export const ItemList = styled.li`
   border: 2px solid #fa8929;
   border-radius: 15px;
   padding: 10px;
-  width: 50%;
   justify-content: space-evenly;
+  width: 40%;
 `;
 
 export const Img = styled.img`
-  width: 230px;
   height: 170px;
   border-radius: 10px;
 `;
@@ -79,12 +104,10 @@ export const Info = styled.div`
 `;
 
 export const Ul = styled.ul`
-  position: absolute;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  left: 12.5%;
-  top: 38%;
-  width: 87.5%;
-  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
 `;
