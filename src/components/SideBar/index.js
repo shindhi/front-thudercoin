@@ -53,7 +53,7 @@ export default function SideBar() {
         <Menu>
           <Item
             to="/historic"
-            active={item === 'historic' && true}
+            active={item === 'historic' ? 1 : 0}
             onClick={() => setItem('historic')}
           >
             <MdHistory size={50} color="#fff" />
@@ -62,7 +62,7 @@ export default function SideBar() {
 
           <Item
             to="/about/how-to-use"
-            active={item === 'about' && true}
+            active={item === 'about' ? 1 : 0}
             onClick={() => setItem('about')}
           >
             <MdHelpOutline size={50} color="#fff" />
@@ -71,7 +71,7 @@ export default function SideBar() {
 
           <Item
             to="/quotation"
-            active={item === 'quotation' && true}
+            active={item === 'quotation' ? 1 : 0}
             onClick={() => setItem('quotation')}
           >
             <AiOutlineLineChart size={50} color="#fff" />

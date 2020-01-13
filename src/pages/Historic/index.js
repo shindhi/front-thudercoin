@@ -28,7 +28,7 @@ class History extends Component {
       <Container>
         <h1>Histórico Geral de Transações</h1>
         <br />
-        <Table type={transactions.transactionType}>
+        <Table type={transactions.transactionType} id="myTable">
           <thead>
             <tr>
               <th>Tipo</th>
@@ -40,7 +40,7 @@ class History extends Component {
           </thead>
           <tbody>
             {transactions.map(transaction => (
-              <tr>
+              <tr key={transaction.id}>
                 <td>
                   {transaction.transactionType === 'INPUT' ? (
                     <Positive>
