@@ -6,7 +6,7 @@ import Historic from './pages/Historic';
 import HowToEarn from './pages/HowToEarn';
 import HowToUse from './pages/HowToUse';
 import Quotation from './pages/Quotation';
-import WhereToUse from './pages/whereToUse';
+import WhereToUse from './pages/WhereToUse';
 
 export default function Routes() {
   return (
