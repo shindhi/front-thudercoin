@@ -3,6 +3,7 @@ import React from 'react';
 import About from '../About';
 import {
   Container,
+  CardContainer,
   UseCard,
   Title,
   Bar,
@@ -13,8 +14,9 @@ import {
 function HowToUse() {
   return (
     <>
-      <About />
       <Container>
+      <About />
+        <CardContainer>
         <UseCard>
           <Title>Como usar</Title>
           <Bar>
@@ -26,6 +28,7 @@ function HowToUse() {
             reembolso a partir da plataforma ThunderCoin!
           </Content>
         </UseCard>
+        </CardContainer>
       </Container>
     </>
   );

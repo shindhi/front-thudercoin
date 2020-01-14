@@ -13,6 +13,7 @@ import {
   Info,
   ItemList,
   Ul,
+  Container,
 } from './styles';
 
 class WhereToUse extends Component {
@@ -32,9 +33,8 @@ class WhereToUse extends Component {
     const { origins } = this.state;
 
     return (
-      <>
+      <Container>
         <About />
-
         <Category>
           <Round onClick={() => this.handleClick('restaurante')}>
             <Restaurant />
@@ -67,7 +67,7 @@ class WhereToUse extends Component {
             </ItemList>
           ))}
         </Ul>
-      </>
+      </Container>
     );
   }
 }
