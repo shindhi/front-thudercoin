@@ -76,6 +76,7 @@ export const Round = styled.button`
     transition: all 0.2s ease-in-out;
     background-color: #fe7600;
     cursor: pointer;
+    transform: scale(1.1,1.1);
   }
   @media (max-width: 770px) {
     margin: 15px;
