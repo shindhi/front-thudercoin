@@ -29,6 +29,10 @@ class WhereToUse extends Component {
     });
   };
 
+  componentDidMount() {
+    this.handleClick("restaurante");
+  }
+
   render() {
     const { origins } = this.state;
 
@@ -48,7 +52,7 @@ class WhereToUse extends Component {
           <Round onClick={() => this.handleClick('careStore')}>
             <img
               src={CareStore}
-              style={{ height: ' 70px' }}
+              style={{ height: ' 70px',  margin: '15px'}}
               alt="Care Store Logo"
             />
           </Round>

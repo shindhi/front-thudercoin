@@ -42,16 +42,6 @@ export const Taxi = styled(FaTaxi)`
   }
 `;
 
-export const CareStoreLogo = styled.svg`
-  width: 70px;
-  height: 70px;
-  @media (max-width: 770px) {
-    margin: 12px;
-    width: 56px;
-    height: 56px;
-  }
-`;
-
 export const Category = styled.div`
   height: 105px;
   display: flex;
@@ -76,6 +66,7 @@ export const Round = styled.button`
     transition: all 0.2s ease-in-out;
     background-color: #fe7600;
     cursor: pointer;
+    transform: scale(1.1,1.1);
   }
   @media (max-width: 770px) {
     margin: 15px;
