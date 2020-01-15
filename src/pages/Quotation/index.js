@@ -3,6 +3,7 @@ import Chart from 'react-google-charts';
 
 import axios from '../../utils/httpClient';
 import { Container } from './styles';
+import dateConverter from './utils/dateConverter';
 
 export default function Quotation() {
   const [dates, setDates] = useState([]);
@@ -27,10 +28,10 @@ export default function Quotation() {
         'Novembro',
         'Dezembro',
       ];
-      let arrDate = [['Date', 'Value']];
 
       const { data } = await axios.get('/quotations');
 
+      let arrDate = [];
       const arrTemp = [
         ['Date', 'Value'],
         [new Date(2020, 0, 9), 3.48],
@@ -43,18 +44,7 @@ export default function Quotation() {
       if (data === '') {
         arrDate = arrTemp;
       } else {
-        data.map(d => {
-          const { createdAt, value } = d;
-          let convertDate = createdAt.split(' ')[0].split(/\//);
-          convertDate = [convertDate[1], convertDate[0], convertDate[2]].join(
-            '/'
-          );
-
-          return arrDate.push([new Date(convertDate), value]);
-
-          // const monthPosition = new Date(convertDate).getMonth();
-          // return arrDate.push([months[monthPosition], value]);
-        });
+        arrDate = dateConverter(data);
       }
 
       setDates(arrDate);
