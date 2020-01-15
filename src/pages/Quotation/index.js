@@ -2,109 +2,83 @@ import React, { useState, useEffect } from 'react';
 import Chart from 'react-google-charts';
 
 import axios from '../../utils/httpClient';
-import {
-  Container,
-  QuotationTitle,
-  QuotationDesc,
-  QuotationFilterBox,
-} from './styles';
+import { Container } from './styles';
 
 export default function Quotation() {
-  const [date, setDates] = useState([]);
+  const [dates, setDates] = useState([]);
 
-  useEffect(async () => {
-    const { data } = await axios.get('/quotations');
-    const arrDate = [['Date', 'Value']];
+  /**
+   * Separar uma funcao
+   */
 
-    data.map(e => arrDate.push([new Date(e.createdAt), e.value]));
+  useEffect(() => {
+    async function loadQuotations() {
+      const months = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+        'Julho',
+        'Agosto',
+        'Setembro',
+        'Outubro',
+        'Novembro',
+        'Dezembro',
+      ];
+      const arrDate = [['Date', 'Value']];
 
-    setDates(arrDate);
+      const { data } = await axios.get('/quotations');
+
+      data.map(d => {
+        const { createdAt, value } = d;
+        let convertDate = createdAt.split(' ')[0].split(/\//);
+
+        convertDate = [convertDate[1], convertDate[0], convertDate[2]].join(
+          '/'
+        );
+
+        return arrDate.push([new Date(convertDate), value]);
+
+        // const monthPosition = new Date(convertDate).getMonth();
+        // return arrDate.push([months[monthPosition], value]);
+      });
+      setDates(arrDate);
+    }
+
+    loadQuotations();
   }, []);
-
-  console.log(date);
 
   return (
     <Container>
-      <QuotationTitle>
-        <h1> Cotação ThunderCoin </h1>
-      </QuotationTitle>
-
-      <QuotationFilterBox>
-        <h1> CONSULTE POR PERÍODO.</h1>
-      </QuotationFilterBox>
-
       <Chart
-        width="100%"
-        chartType="AreaChart"
+        width="100%" // Largura area grafico
+        height={500} // Altura area grafico
+        chartType="LineChart" // Tipo de grafico
         loader={<div>Loading Chart</div>}
-        data={[
-          date.forEach(e => {
-            console.log(e);
-            return e;
-          }),
-        ]}
-        // data={[
-        //   ['Date', 'Value'],
-        //   [new Date(1997, 1, 1), 2000 * Math.random()],
-        //   [new Date(1998, 1, 1), 2000 * Math.random()],
-        //   [new Date(1999, 1, 1), 2000 * Math.random()],
-        //   [new Date(2000, 1, 1), 2000 * Math.random()],
-        //   [new Date(2001, 1, 1), 2000 * Math.random()],
-        //   [new Date(2002, 1, 1), 2000 * Math.random()],
-        //   [new Date(2003, 1, 1), 2000 * Math.random()],
-        //   [new Date(2004, 1, 1), 2000 * Math.random()],
-        //   [new Date(2005, 1, 1), 2000 * Math.random()],
-        //   [new Date(2006, 1, 1), 2000 * Math.random()],
-        //   [new Date(2007, 1, 1), 2000 * Math.random()],
-        //   [new Date(2008, 1, 1), 2000 * Math.random()],
-        //   [new Date(2009, 1, 1), 2000 * Math.random()],
-        // ]}
+        data={dates} // Valores
         options={{
-          legendTextStyle: { color: '#FFF' },
-          titleTextStyle: { color: '#FFF' },
-          colors: ['#640096'],
-          backgroundColor: 'rgb(255,255,0)',
-          // Use the same chart area width as the control for axis alignment.
-          chartArea: { height: '80%', width: '100%' },
-          hAxis: { slantedText: false },
-          vAxis: { viewWindow: { min: 0, max: 2000 } },
-          legend: { position: 'none' },
+          title: 'Cotação Thunder Coin', // Titulo grafico
+          titleTextStyle: {
+            fontSize: 18,
+            fontName: 'Roboto',
+          },
+          chartArea: {
+            width: '80%',
+            height: '70%',
+            backgroundColor: '#fff',
+            borderRadius: '50%',
+          }, // Area interna grafico
+          hAxis: {
+            title: 'Data',
+            titleTextStyle: { color: '#000' },
+            format: 'd/M/yy',
+            gridlines: { count: 15 },
+          }, // Legenda rodape grafico
+          vAxis: { title: 'Valores (R$)', minValue: 0, format: 'currency' },
         }}
-        rootProps={{ 'data-testid': '3' }}
-        chartPackages={['corechart', 'controls']}
-        // controls={[
-        //   {
-        //     legendTextStyle: { color: '#FFF' },
-        //     titleTextStyle: { color: '#FFF' },
-        //     controlType: 'ChartRangeFilter',
-        //     options: {
-        //       filterColumnIndex: 0,
-        //       ui: {
-        //         chartType: 'LineChart',
-        //         chartOptions: {
-        //           colors: ['red'],
-        //           backgroundColor: 'rgb(255,255,0)',
-        //           chartArea: { width: '70%', height: '60%' },
-        //           hAxis: { baselineColor: 'none' },
-        //         },
-        //       },
-        //     },
-        //     controlPosition: 'top',
-        //     controlWrapperParams: {
-        //       state: {
-        //         range: {
-        //           start: new Date(2009, 1, 1),
-        //           end: new Date(2009, 1, 1),
-        //         },
-        //       },
-        //     },
-        //   },
-        // ]}
       />
-
-      <QuotationDesc>
-        <h1>Acompanhe a cotação do ThunderCoin.</h1>
-      </QuotationDesc>
     </Container>
   );
 }
