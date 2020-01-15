@@ -1,11 +1,12 @@
 import { IoIosFlash } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
+import { darken } from 'polished';
 import styled from 'styled-components';
 
 export const Bar = styled.div`
   grid-area: sidebar;
-  background: rgba(254, 118, 0, 0.8);
+  background: #fc8e4c;
 `;
 
 export const CoinThunder = styled(IoIosFlash)`
@@ -104,7 +105,7 @@ export const ConfigProfile = styled.button`
 
   &:hover {
     background: #fff;
-    color: rgba(254, 118, 0, 0.8);
+    color: #fc8e4c;
   }
 
   @media screen and (max-width: 1280px) {
@@ -126,14 +127,17 @@ export const Item = styled(Link)`
   color: #fff;
   margin: 10px 0;
   height: calc(100vh - 88vh);
+  background: ${props => (props.active ? darken(0.1, '#fc8e4c') : '#fc8e4c')};
+  transition: background 0.2s;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  background: ${props =>
-    props.active ? 'rgba(254, 118, 0, 1)' : 'rgba(255, 142, 76, 1)'};
+  &:hover {
+    background: ${darken(0.1, '#fc8e4c')};
+  }
 
   @media screen and (max-width: 1280px) {
     /* height: 80px; */
