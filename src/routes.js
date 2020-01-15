@@ -6,7 +6,7 @@ import Historic from './pages/Historic';
 import HowToEarn from './pages/HowToEarn';
 import HowToUse from './pages/HowToUse';
 import Quotation from './pages/Quotation';
-import WhereToUse from './pages/whereToUse';
+import WhereToUse from './pages/WhereToUse';
 
 export default function Routes() {
   return (
@@ -17,7 +17,7 @@ export default function Routes() {
 
       <Route path="/about/how-to-earn" component={HowToEarn} />
       <Route path="/about/how-to-use" component={HowToUse} />
-      <Route path="/about/where-to-use" component={WhereToUse} />
+      <Route path="/about/where-to-use"  component={WhereToUse} />
 
       <Route path="/quotation" component={Quotation} />
     </Switch>

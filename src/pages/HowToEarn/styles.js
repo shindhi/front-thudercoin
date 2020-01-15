@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    align-items: center;
-    position: absolute;
     display: flex;
-    top: 25%;
-    left: 30%;
+    flex-direction: column;
+    align-items: center;
+    // position: absolute;
+    // top: 25%;
+    // left: 30%;
 `
 export const UseCard = styled.div`
     margin: 0 auto;
@@ -17,8 +18,7 @@ export const UseCard = styled.div`
     box-shadow: -1rem 0 3rem rgb(80, 76, 76);
     transition: 0.4s ease-out;
     position: relative;
-    left: 75%;
-
+    top: 3%;
     &:not(:first-child) {
       margin-left: -50px;
   }
@@ -30,9 +30,17 @@ export const UseCard = styled.div`
         cursor: pointer;
     }
 `
+export const CardContainer = styled.div`
+margin: 0 auto;
+display: flex;
+flex-direction: row;
+width: 100%;
+`;
+
 export const Card = styled.div`
     margin: 0 auto;
     display: flex;
+    // flex-direction: row;
     height: 450px;
     width: 400px;
     background-color: #FD913A;
@@ -43,7 +51,7 @@ export const Card = styled.div`
     left: 0px;
 
     &:not(:first-child) {
-      margin-left: -50px;
+      margin-left: -130px;
   }
 
     &:hover{
