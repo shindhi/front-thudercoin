@@ -17,7 +17,7 @@ export default function Routes() {
 
       <Route path="/about/how-to-earn" component={HowToEarn} />
       <Route path="/about/how-to-use" component={HowToUse} />
-      <Route path="/about/where-to-use"  component={WhereToUse} />
+      <Route path="/about/where-to-use" component={WhereToUse} />
 
       <Route path="/quotation" component={Quotation} />
     </Switch>
