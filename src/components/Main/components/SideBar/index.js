@@ -1,6 +1,7 @@
 import React from 'react';
 import { AiOutlineLineChart } from 'react-icons/ai';
 import { MdHistory, MdHelpOutline } from 'react-icons/md';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 import { Divider, Drawer } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
@@ -11,11 +12,12 @@ import SidebarNav from './components/SidebarNav';
 
 const useStyles = makeStyles(theme => ({
   drawer: {
-    width: 240,
+    width: 210,
     [theme.breakpoints.up('lg')]: {
-      marginTop: 64,
-      height: 'calc(100% - 64px)',
+      marginTop: 48,
+      height: 'calc(100% - 30px)',
     },
+    backgroundColor: theme.palette.orange,
   },
   root: {
     backgroundColor: theme.palette.orange,
@@ -63,11 +65,13 @@ export default function SideBar(props) {
       open={open}
       variant={variant}
     >
-      <div {...rest} className={clsx(classes.root, className)}>
-        <Profile />
-        <Divider className={classes.divider} />
-        <SidebarNav className={classes.nav} pages={pages} />
-      </div>
+      <PerfectScrollbar>
+        <div {...rest} className={clsx(classes.root, className)}>
+          <Profile />
+          <Divider className={classes.divider} />
+          <SidebarNav className={classes.nav} pages={pages} />
+        </div>
+      </PerfectScrollbar>
     </Drawer>
   );
 }

@@ -11,15 +11,15 @@ export const CoinThunder = styled(IoIosFlash)`
 `;
 
 export const BasicInfo = styled.div`
-  padding-top: 15%;
+  padding-top: 5%;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
   img {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
   }
 

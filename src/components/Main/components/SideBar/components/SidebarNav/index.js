@@ -7,7 +7,6 @@ import clsx from 'clsx';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: '50%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -19,7 +18,8 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     color: theme.palette.white,
-    padding: '20px 8px',
+    padding: '10px 8px',
+    margin: '8px 0',
     justifyContent: 'center',
     textTransform: 'none',
     letterSpacing: 0,

@@ -13,6 +13,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     boxShadow: 'none',
   },
+  regular: {
+    minHeight: '30px',
+  },
   flexGrow: {
     flexGrow: 1,
   },
@@ -26,7 +29,7 @@ export default function Topbar({ className, onSidebarOpen, ...rest }) {
 
   return (
     <AppBar {...rest} className={clsx(classes.root, className)}>
-      <Toolbar>
+      <Toolbar className={classes.regular}>
         <RouterLink to="/">Dashboard</RouterLink>
         <div className={classes.flexGrow} />
         <Hidden mdDown>

@@ -16,14 +16,15 @@ const useStyles = makeStyles(theme => ({
     },
   },
   shiftContent: {
-    paddingLeft: 240,
+    paddingLeft: 209,
   },
   content: {
     height: '100%',
   },
 }));
 
-export default function Main({ children }) {
+export default function Main(props) {
+  const { children } = props;
   const classes = useStyles();
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'), {
