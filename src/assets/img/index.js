@@ -1,5 +1,5 @@
 import CareStore from './careStore.svg';
 import PriceIcon from './price_icon.svg';
 import RestaurantPhoto from './restaurante.jpeg';
-
-export { CareStore, PriceIcon, RestaurantPhoto };
+import GymWeight from './gym-weight.png'
+export { CareStore, PriceIcon, RestaurantPhoto, GymWeight };

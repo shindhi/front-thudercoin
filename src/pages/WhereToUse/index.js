@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { CareStore } from '../../assets/img';
+import { GymWeight } from '../../assets/img';
 import axios from '../../utils/httpClient';
 import About from '../About/index';
 import {
@@ -22,15 +22,21 @@ class WhereToUse extends Component {
   };
 
   handleClick = category => {
-    axios.get(`/origins/filter?category=${category}`).then(({ data }) => {
+    axios.get(`/origins/filter/earn-expend?earn=FALSE&expend=TRUE`).then(({ data }) => {
+      let filteredOrigins=[];
+      data.forEach(origin => {
+        if (origin.category.name===category) {
+          filteredOrigins.push(origin)
+        }
+      });
       this.setState({
-        origins: data,
+        origins: filteredOrigins,
       });
     });
   };
 
   componentDidMount() {
-    this.handleClick("restaurante");
+    this.handleClick("Restaurante");
   }
 
   render() {
@@ -40,19 +46,19 @@ class WhereToUse extends Component {
       <Container>
         <About />
         <Category>
-          <Round onClick={() => this.handleClick('restaurante')}>
+          <Round onClick={() => this.handleClick('Restaurante')}>
             <Restaurant />
           </Round>
-          <Round onClick={() => this.handleClick('educação')}>
+          <Round onClick={() => this.handleClick('Educacao')}>
             <Book />
           </Round>
-          <Round onClick={() => this.handleClick('transporte')}>
+          <Round onClick={() => this.handleClick('Transporte')}>
             <Taxi />
           </Round>
-          <Round onClick={() => this.handleClick('careStore')}>
+          <Round onClick={() => this.handleClick('Academia')}>
             <img
-              src={CareStore}
-              style={{ height: ' 70px',  margin: '15px'}}
+              src={GymWeight}
+              style={{ height: '80px'}}
               alt="Care Store Logo"
             />
           </Round>
