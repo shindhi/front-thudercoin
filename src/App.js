@@ -1,22 +1,26 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { Grid } from './components/Grid';
-import Header from './components/Header';
-import SideBar from './components/SideBar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@material-ui/core/styles';
+
+import Main from './components/Main';
 import Routes from './routes';
 import GlobalStyle from './styles/global';
+import theme from './theme';
+
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyle />
-      <Grid>
-        <Header />
-        <SideBar />
-        <Routes />
-      </Grid>
-      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Main>
+          <Routes />
+        </Main>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }
