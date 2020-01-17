@@ -60,3 +60,27 @@ export const Positive = styled.div`
     color: green;
   }
 `;
+
+export const Select = styled.select`
+  font-size: 16px;
+  flex: 1;
+  padding: 0.2em;
+  color: #000;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 0.25em;
+
+  option {
+    background: #fff;
+    height: 30px;
+    border: 1px solid #cbcbcb;
+    padding-left: 17px;
+    padding-top: 12px;
+  }
+`;
