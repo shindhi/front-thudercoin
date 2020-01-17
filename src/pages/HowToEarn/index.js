@@ -1,49 +1,51 @@
-import React from 'react';
+import React, { Component } from 'react'
+import axios from '../../utils/httpClient'
+import About from '../About'
+import { Container, Cards, Card, Title, Content } from './styles';
 
-import About from '../About';
-import { Container, CardContainer, Card, Title, Bar, EmptyBar, Content } from './styles';
+class HowToEarn extends Component {
 
-function HowToEarn() {
-  return (
-    <>
-      <Container>
-        <About />
-        <CardContainer>
-        <Card>
-          <Title>Lecionando</Title>
-          <Bar>
-            <EmptyBar />
-          </Bar>
-          <Content>
-            Domina uma tecnologia, um idioma ou um instrumento musical?
-            Compartilhe esse conhecimento com outros invillianos e ajude-os a
-            alcançar uma nova habilidade..
-          </Content>
-        </Card>
-        <Card>
-          <Title>Ajudando um remoto</Title>
-          <Bar>
-            <EmptyBar />
-          </Bar>
-          <Content>
-            Abrigue nossos funcionários remotos em sua residência quando
-            necessitarem e receba por isso...
-          </Content>
-        </Card>
-        <Card>
-          <Title>Recebendo Good Jobs</Title>
-          <Bar>
-            <EmptyBar />
-          </Bar>
-          <Content>
-            Tenha toda a sua ajuda reconhecida por Good Jobs e receba por
-            isso...
-          </Content>
-        </Card>
-        </CardContainer>
-      </Container>
-    </>
-  );
+  state = {
+    origins: [],
+  };
+
+  async componentDidMount() {
+    const { data } = await axios.get("/origins/filter/earn-expend?earn=TRUE&expend=FALSE");
+    this.setState({ origins: data })
+  }
+
+  render() {
+    const { origins } = this.state;
+
+    if (origins.length !== 0) {
+
+      return (
+        <Container>
+          <About />
+          <Cards>
+            {origins.map(origin => {
+              if (origin.status === 'ACTIVE') {
+                return <div key={origin.id}>
+                  <Card>
+                    <Title>{origin.name}</Title>
+                    <Content>
+                      <span>{origin.description}</span>
+                    </Content>
+                  </Card>
+                </div>
+              }
+            })}
+          </Cards>
+        </Container>
+      );
+    }
+    else {
+      return (
+        <div>
+        </div>
+      )
+    }
+  }
 }
 
 export default HowToEarn;
