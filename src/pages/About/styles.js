@@ -18,7 +18,6 @@ export const CardExibition = styled.button`
   transition: background 0.2s;
   margin: 30px;
   font-size: 20px;
-
   &:hover {
     background: #fd913a;
     color: #fff;
