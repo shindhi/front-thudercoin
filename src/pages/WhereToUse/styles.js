@@ -61,7 +61,9 @@ export const Round = styled.button`
   height: 100px;
   border-radius: 50%;
   color: white;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:hover {
     transition: all 0.2s ease-in-out;
     background-color: #fe7600;
